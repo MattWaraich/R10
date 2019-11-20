@@ -1,12 +1,15 @@
 // import AboutContainer from './AboutContainer';
 import React from 'react';
-import {ScrollView, Text, View, Image} from 'react-native';
+import {ScrollView, Text, View, Image, FlatList} from 'react-native';
 import styles from './styles';
+import AboutContainer from './AboutContainer';
+import {Query} from 'react-apollo';
 
-const About = () => {
+const About = ({data}) => {
+  console.log(data);
   return (
     <ScrollView style={styles.default}>
-      <View style={styles.aboutPageImageConFainer}>
+      <View style={styles.aboutPageImageContainer}>
         <Image
           style={styles.aboutPageImage}
           source={require('../../assets/images/r10_logo.png')}
@@ -30,6 +33,16 @@ const About = () => {
       <View>
         <Text style={styles.aboutTitle}>Code of Conduct</Text>
       </View>
+
+      <View>
+        {data.allConducts.map(element => (
+          <View key={element.id}>
+            <Text>{element.title}</Text>
+            <Text>{element.description}</Text>
+          </View>
+        ))}
+      </View>
+
       <Text style={styles.aboutFooter}>&#9400; RED Academy 2019</Text>
     </ScrollView>
   );

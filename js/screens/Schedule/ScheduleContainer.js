@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Schedule from './Schedule';
 import {gql} from 'apollo-boost';
 import {Query} from '@apollo/react-components';
-import {Text, ActivityIndicator} from 'react-native';
+import {Text} from 'react-native';
 import styles from './styles';
+import Loader from '../../components/Loader';
 
 const ALL_SESSIONS = gql`
   query {
@@ -29,8 +30,7 @@ class ScheduleContainer extends Component {
     return (
       <Query query={ALL_SESSIONS}>
         {({loading, error, data}) => {
-          if (loading)
-            return <ActivityIndicator size="large" style={styles.loader} />;
+          if (loading) return <Loader />;
           if (error) return <Text>{error.message}</Text>;
           if (data) {
             return <Schedule allSession={data.allSession} />;

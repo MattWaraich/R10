@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     fontSize: 27,
     paddingBottom: 20,
     fontWeight: '600',
-    // fontFamily: typography.fontMain,
   },
   aboutPage: {
     padding: 20,
@@ -23,6 +22,7 @@ const styles = StyleSheet.create({
   aboutPageImageContainer: {
     alignItems: 'center',
     paddingBottom: 25,
+    paddingTop: 25,
     marginBottom: 25,
     borderBottomColor: '#e6e6e6',
     borderBottomWidth: 1,
