@@ -1,15 +1,15 @@
 import React from 'react';
-import {View, Image, Text, ScrollView, Button} from 'react-native';
-import Session from '../../components/Session';
+import {
+  View,
+  Image,
+  Text,
+  ScrollView,
+  Button,
+  ActivityIndicator,
+} from 'react-native';
 
-const Schedule = ({navigation, data}) => {
-  return data ? (
-    <View>
-      <Session data={data} />
-    </View>
-  ) : (
-    <Loader />
-  );
+const Schedule = ({navigation, allSession}) => {
+  return allSession ? <View /> : <ActivityIndicator />;
 };
 
 export default Schedule;

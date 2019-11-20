@@ -13,7 +13,6 @@ class FavesProvider extends Component {
   componentDidMount() {
     this.getFavedSessionIds();
   }
-
   getFavedSessionIds = async () => {
     try {
       const faves = await getAllFave();

@@ -71,10 +71,10 @@ const ScheduleStack = createStackNavigator(
 // moving the order of these stacks effects how they are displayed
 export default createBottomTabNavigator(
   {
+    Schedule: ScheduleStack,
+    Map: MapStack,
     Faves: FavesStack,
     About: AboutStack,
-    Map: MapStack,
-    Schedule: ScheduleStack,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
