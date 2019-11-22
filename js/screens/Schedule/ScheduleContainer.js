@@ -8,7 +8,7 @@ import Loader from '../../components/Loader';
 
 const ALL_SESSIONS = gql`
   query {
-    allSessions {
+    allSessions(orderBy: startTime_ASC) {
       id
       description
       location
@@ -30,15 +30,15 @@ class ScheduleContainer extends Component {
     return (
       <Query query={ALL_SESSIONS}>
         {({loading, error, data}) => {
-          if (loading) return <Loader />;
+          if (loading || !data) return <Loader />;
           if (error) return <Text>{error.message}</Text>;
-          if (data) {
-            return <Schedule allSession={data.allSession} />;
-          }
+          console.log(data);
+
+          return <Schedule allSession={data.allSession} />;
         }}
       </Query>
     );
   }
-}
+} 
 
 export default ScheduleContainer;

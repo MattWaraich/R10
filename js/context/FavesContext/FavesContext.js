@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {addFave, getAllFave, removeFav} from '../../config/models';
+import {addFave, getAllFaves, removeFav} from '../../config/models';
 
 export const FavesContext = React.createContext();
 
@@ -15,7 +15,7 @@ class FavesProvider extends Component {
   }
   getFavedSessionIds = async () => {
     try {
-      const faves = await getAllFave();
+      const faves = await getAllFaves();
       const ids = faves.map(fave => fave[0]);
       this.setState({faveIds: ids});
     } catch (e) {
