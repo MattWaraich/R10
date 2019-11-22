@@ -4,9 +4,9 @@ import {ScrollView, Text, View, Image, FlatList} from 'react-native';
 import styles from './styles';
 import AboutContainer from './AboutContainer';
 import {Query} from 'react-apollo';
+import Conducts from '../../components/Conducts';
 
 const About = ({data}) => {
-  console.log(data);
   return (
     <ScrollView style={styles.default}>
       <View style={styles.aboutPageImageContainer}>
@@ -37,8 +37,7 @@ const About = ({data}) => {
       <View>
         {data.allConducts.map(element => (
           <View key={element.id}>
-            <Text>{element.title}</Text>
-            <Text>{element.description}</Text>
+            <Conducts title={element.title} description={element.description} />
           </View>
         ))}
       </View>

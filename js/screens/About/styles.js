@@ -3,29 +3,29 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   aboutTitle: {
     fontSize: 27,
-    paddingBottom: 20,
+    paddingBottom: 10,
     fontWeight: '600',
   },
   aboutPage: {
-    padding: 20,
+    paddingLeft: 60,
+    paddingRight: 60,
   },
   aboutPageImage: {
-    width: 230,
-    height: 55,
+    width: 250,
+    height: 60,
   },
   loader: {
     flex: 1,
-    justifyContent: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
   },
   aboutPageImageContainer: {
     alignItems: 'center',
-    paddingBottom: 25,
-    paddingTop: 25,
-    marginBottom: 25,
+    paddingBottom: 23,
+    paddingTop: 23,
+    marginBottom: 23,
     borderBottomColor: '#e6e6e6',
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
   },
 });
 

@@ -1,2 +1,2 @@
-import Conducts from './SingleConduct';
+import Conducts from './Conducts';
 export default Conducts;
