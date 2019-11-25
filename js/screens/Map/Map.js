@@ -1,8 +1,13 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, View, Image} from 'react-native';
+import styles from './styles';
 
 const Map = () => {
-  return <Text> Hello Sky </Text>;
+  return (
+    <View style={styles.mapPageImageContainer}>
+      <Image source={require('../../assets/images/comingSoon.png')} />
+    </View>
+  );
 };
 
 export default Map;
