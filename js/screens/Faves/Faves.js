@@ -1,9 +1,12 @@
 import React from 'react';
 import {Text} from 'react-native';
-import styles from './styles';
+import dataFormatHelper from '../../lib/dataFormatHelper';
 
-const Faves = () => {
-  return <Text style={styles.attribution}>Hello World </Text>;
+const Favs = ({navigation, data}) => {
+  console.log(data);
+  const formattedData = dataFormatHelper(data);
+  console.log(formattedData);
+  return <Text>asdfdf</Text>;
 };
 
-export default Faves;
+export default Favs;

@@ -3,7 +3,9 @@ import Speaker from './Speaker';
 
 class SpeakerContainer extends Component {
   render() {
-    return <Speaker />;
+    const {navigation} = this.props;
+    const speaker = navigation.getParam('speaker', {});
+    return <Speaker speaker={speaker} />;
   }
 }
 

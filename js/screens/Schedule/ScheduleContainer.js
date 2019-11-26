@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import Schedule from './Schedule';
-import {gql} from 'apollo-boost';
 import {Query} from '@apollo/react-components';
 import {Text} from 'react-native';
-// import styles from './styles';
 import Loader from '../../components/Loader';
 import {QUERY_ALL_SESSIONS} from '../../apollo';
+import {formatSessionData} from '../../lib/dataFormatHelper';
 
 class ScheduleContainer extends Component {
   render() {
+    const {navigation} = this.props;
     return (
       <Query query={QUERY_ALL_SESSIONS}>
         {({loading, error, data}) => {
@@ -21,7 +21,8 @@ class ScheduleContainer extends Component {
           }
 
           if (data) {
-            return <Schedule allSession={data.allSessions} />;
+            const formattedData = formatSessionData(data.allSessions);
+            return <Schedule navigation={navigation} data={formattedData} />;
           }
         }}
       </Query>
