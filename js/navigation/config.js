@@ -14,7 +14,6 @@ const GradientHeader = props => (
       end={{x: 1.0, y: 0.0}}
       style={[StyleSheet.absoluteFill, {height: 120, width: '100%'}]}
     />
-    {/* passing their props first but rendering our gradient first */}
     <Header {...props} />
   </View>
 );

@@ -1,12 +1,23 @@
 import React from 'react';
-import {Text} from 'react-native';
-import dataFormatHelper from '../../lib/dataFormatHelper';
+import {SectionList, Text} from 'react-native';
+import moment from 'moment';
+import Session from '../../components/Session';
+import styles from './styles';
 
-const Favs = ({navigation, data}) => {
-  console.log(data);
-  const formattedData = dataFormatHelper(data);
-  console.log(formattedData);
-  return <Text>asdfdf</Text>;
+const Faves = ({navigation, data}) => {
+  return (
+    <SectionList
+      sections={data}
+      keyExtractor={(item, index) => item + index}
+      renderItem={({item}) => (
+        <Session navigation={navigation} session={item} />
+      )}
+      renderSectionHeader={({section: {title}}) => {
+        const time = moment(title).format('hh:mm A');
+        return <Text style={styles.time}>{`${time}`}</Text>;
+      }}
+    />
+  );
 };
 
-export default Favs;
+export default Faves;
