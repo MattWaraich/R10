@@ -22,15 +22,9 @@ class FavesContainer extends Component {
                 if (loading) return <Loader />;
                 if (error) return <Text>Error : {error}</Text>;
                 if (data) {
-                  let filteredData = data.allSessions.filter(session => {
-                    console.log(favIds);
-                  });
-                  console.log(filteredData);
-<<<<<<< HEAD
+                  let filteredData = data.allSessions.filter(session => {});
+
                   return <Text>Test again</Text>;
-=======
-                  return <Text>abc</Text>;
->>>>>>> aa57c94c73d50974c345343d35d1a00130ad810d
                 }
               }}
             </Query>

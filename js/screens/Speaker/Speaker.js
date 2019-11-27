@@ -10,11 +10,7 @@ const Speaker = ({navigation, speaker}) => {
   let IconComponent = Ionicons;
   return (
     <View style={styles.speakerScreenBackground}>
-<<<<<<< HEAD
       <View>
-=======
-      <View style={styles.speakerTop}>
->>>>>>> aa57c94c73d50974c345343d35d1a00130ad810d
         <TouchableOpacity>
           <IconComponent
             name="ios-close"
@@ -28,14 +24,9 @@ const Speaker = ({navigation, speaker}) => {
         </View>
       </View>
       <ScrollView>
-<<<<<<< HEAD
         <View>
           {/* add correct image path!! */}
           <Image />
-=======
-        <View style={styles.speakerBox}>
-          <Image style={styles.speakersImage} source={{uri: speaker.image}} />
->>>>>>> aa57c94c73d50974c345343d35d1a00130ad810d
           <Text style={styles.speakersName}>{speaker.name}</Text>
           <Text style={styles.speakersBio}>{speaker.bio}</Text>
           <TouchableOpacity onPress={() => Linking.openURL(speaker.url)}>

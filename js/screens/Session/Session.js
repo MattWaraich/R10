@@ -49,10 +49,6 @@ const Session = ({
                 style={styles.speakerImg}
                 source={{uri: data.speaker.image}}
               />
-<<<<<<< HEAD
-=======
-              <Text style={styles.speakerName}>{data.speaker.name}</Text>
->>>>>>> aa57c94c73d50974c345343d35d1a00130ad810d
             </View>
           </TouchableOpacity>
         </>
@@ -62,11 +58,7 @@ const Session = ({
           !isFave ? addFaveSession(data.id) : removeFaveSession(data.id);
         }}>
         <Button>{!isFave ? 'Add to Faves' : 'Remove from Faves'}</Button>
-<<<<<<< HEAD
         {Platform.OS === 'android' && <View />}
-=======
-        {Platform.OS === 'android' && <View style={styles.gap} />}
->>>>>>> aa57c94c73d50974c345343d35d1a00130ad810d
       </TouchableOpacity>
     </ScrollView>
   );

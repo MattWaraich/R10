@@ -1,5 +1,5 @@
 import {StyleSheet, Platform} from 'react-native';
-import {blue} from 'ansi-colors';
+import colors from '../../config/styles';
 
 const styles = StyleSheet.create({
   speakerScreenBackground: {
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   speakersName: {
     paddingTop: 20,
     fontSize: 35,
-    color: blue,
+    // color: black,
     fontFamily: 'Montserrat-Light',
     paddingBottom: 20,
 
