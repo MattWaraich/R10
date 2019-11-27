@@ -26,7 +26,11 @@ class FavesContainer extends Component {
                     console.log(favIds);
                   });
                   console.log(filteredData);
+<<<<<<< HEAD
                   return <Text>Test again</Text>;
+=======
+                  return <Text>abc</Text>;
+>>>>>>> aa57c94c73d50974c345343d35d1a00130ad810d
                 }
               }}
             </Query>
