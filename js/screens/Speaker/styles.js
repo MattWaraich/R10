@@ -37,6 +37,25 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignSelf: 'center',
   },
+  wikipediaLink: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    left: 0,
+    borderRadius: 18,
+  },
+  wikipediaButton: {
+    height: 36,
+    width: '60%',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  readMoreText: {
+    color: '#f1f1f1',
+    fontFamily: 'Montserrat-regular',
+  },
   speakersName: {
     paddingTop: 20,
     fontSize: 35,
