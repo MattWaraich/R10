@@ -1,27 +1,24 @@
 import React from 'react';
-import {Query} from 'react-apollo';
 import Session from './Session';
-import {Text} from 'react-native';
-import Loader from '../../components/Loader';
-import {QUERY_ALL_SESSIONS} from '../../apollo/index';
+import {FavesContext} from '../../context/FavesContext';
 
 class SessionContainer extends React.Component {
   render() {
+    const {navigation} = this.props;
     return (
-      <Query query={QUERY_ALL_SESSIONS}>
-        {({loading, error, data}) => {
-          if (loading) {
-            return <Loader />;
-          }
-
-          if (error) {
-            return <Text>Error</Text>;
-          }
-          if (data) {
-            return <Session data={data} />;
-          }
+      <FavesContext.Consumer>
+        {({faveIds, addFaveSessionId, removeFaveSessionId}) => {
+          return (
+            <Session
+              data={navigation.state.params[0]}
+              faveIds={faveIds}
+              addFaveSessionId={addFaveSessionId}
+              removeFaveSessionId={removeFaveSessionId}
+              navigation={navigation}
+            />
+          );
         }}
-      </Query>
+      </FavesContext.Consumer>
     );
   }
 }

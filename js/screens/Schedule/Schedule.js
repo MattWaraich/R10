@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, SectionList} from 'react-native';
 import Loader from '../../components/Loader';
-import Session from '../../components/Session';
+import SessionComp from '../../components/SessionComp';
 import moment from 'moment';
 import styles from './styles';
 
@@ -11,7 +11,7 @@ const Schedule = ({navigation, data}) => {
       sections={data}
       keyExtractor={(item, index) => item + index}
       renderItem={({item}) => (
-        <Session navigation={navigation} session={item} />
+        <SessionComp navigation={navigation} session={item} />
       )}
       renderSectionHeader={({section: {title}}) => {
         const time = moment(title).format('hh:mm A');

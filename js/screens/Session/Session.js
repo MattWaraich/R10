@@ -12,53 +12,49 @@ import {
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
+
 const Session = ({
   data,
   faveIds,
-  addFaveSession,
-  removeFaveSession,
+  addFaveSessionId,
+  removeFaveSessionId,
   navigation,
 }) => {
   const time = moment(data.startTime).format('hh:mm A');
-  const isFave = faveIds.includes(data.id);
+  console.log(data);
+  const isFaved = faveIds.includes(data.id);
 
   return (
     <ScrollView>
-      <View>
-        {isFave ? (
-          <Ionicons
-            name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
-            style={styles.iconHeart}
-            size={24}
-            color="red"
-          />
-        ) : null}
-      </View>
+      {isFaved && (
+        <Ionicons
+          name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+          style={styles.iconHeart}
+          size={24}
+          color="red"
+        />
+      )}
 
+      <Text>{data.location}</Text>
       <Text>{data.title}</Text>
+      <Text>{time}</Text>
       <Text>{data.description}</Text>
-      {data.speaker ? (
-        <>
-          <Text style={styles.presentedBy}>Presented by:</Text>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Speaker', [data.speaker]);
-            }}>
-            <View style={styles.speakerView}>
-              <Image
-                style={styles.speakerImg}
-                source={{uri: data.speaker.image}}
-              />
-            </View>
-          </TouchableOpacity>
-        </>
-      ) : null}
       <TouchableOpacity
         onPress={() => {
-          !isFave ? addFaveSession(data.id) : removeFaveSession(data.id);
+          navigation.push('Speaker', [data.speaker]);
         }}>
-        <Button>{!isFave ? 'Add to Faves' : 'Remove from Faves'}</Button>
-        {Platform.OS === 'android' && <View />}
+        <Image
+          style={{width: 50, height: 50}}
+          source={{uri: data.speaker.image}}
+        />
+        <Text>{data.speaker.name}</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => {
+          !isFaved ? addFaveSessionId(data.id) : removeFaveSessionId(data.id);
+        }}>
+        <Text>{!isFaved ? 'Add to Faves' : 'Remove from Faves'}</Text>
       </TouchableOpacity>
     </ScrollView>
   );

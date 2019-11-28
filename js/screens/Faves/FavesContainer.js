@@ -24,7 +24,7 @@ class FavesContainer extends Component {
                 if (data) {
                   let filteredData = data.allSessions.filter(session => {});
 
-                  return <Text>Test again</Text>;
+                  return <Text>You haven't faved any sessions yet</Text>;
                 }
               }}
             </Query>

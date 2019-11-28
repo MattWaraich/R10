@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
-const Session = ({session, navigation}) => {
+const SessionComp = ({session, navigation}) => {
   return (
     <TouchableOpacity
       onPress={() => {
@@ -16,4 +16,4 @@ const Session = ({session, navigation}) => {
   );
 };
 
-export default Session;
+export default SessionComp;

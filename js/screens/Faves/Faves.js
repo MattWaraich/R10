@@ -1,7 +1,7 @@
 import React from 'react';
 import {SectionList, Text} from 'react-native';
 import moment from 'moment';
-import Session from '../../components/Session';
+import SessionComp from '../../components/SessionComp';
 import styles from './styles';
 
 const Faves = ({navigation, data}) => {
@@ -10,7 +10,7 @@ const Faves = ({navigation, data}) => {
       sections={data}
       keyExtractor={(item, index) => item + index}
       renderItem={({item}) => (
-        <Session navigation={navigation} session={item} />
+        <SessionComp navigation={navigation} session={item} />
       )}
       renderSectionHeader={({section: {title}}) => {
         const time = moment(title).format('hh:mm A');
