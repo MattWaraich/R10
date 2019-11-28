@@ -1,5 +1,4 @@
 import {StyleSheet, Platform} from 'react-native';
-import {colors} from '../../config/styles';
 
 const styles = StyleSheet.create({
   speakerScreenBackground: {

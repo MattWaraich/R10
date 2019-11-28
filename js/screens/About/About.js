@@ -2,8 +2,6 @@
 import React from 'react';
 import {ScrollView, Text, View, Image, FlatList} from 'react-native';
 import styles from './styles';
-import AboutContainer from './AboutContainer';
-import {Query} from 'react-apollo';
 import Conducts from '../../components/Conducts';
 
 const About = ({data}) => {
@@ -36,12 +34,17 @@ const About = ({data}) => {
 
       <View>
         {data.allConducts.map(element => (
-          <View key={element.id}>
-            <Conducts title={element.title} description={element.description} />
+          <View style={styles.allConducts} key={element.id}>
+            <Conducts
+              style={styles.conductsDescription}
+              title={element.title}
+              description={element.description}
+            />
           </View>
         ))}
       </View>
 
+      <View style={styles.aboutGreyBar} />
       <Text style={styles.aboutFooter}>&#9400; RED Academy 2019</Text>
     </ScrollView>
   );

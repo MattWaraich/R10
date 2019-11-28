@@ -4,7 +4,6 @@ import {QUERY_ALL_CONDUCTS} from '../../apollo/index';
 import About from './About';
 import {Text} from 'react-native';
 import Loader from '../../components/Loader';
-import styles from './styles';
 
 class AboutContainer extends React.Component {
   render() {

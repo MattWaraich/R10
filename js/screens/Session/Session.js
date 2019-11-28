@@ -29,7 +29,7 @@ const Session = ({
   const isFaved = faveIds.includes(data.id);
 
   return (
-    <ScrollView style={styles.wrap}>
+    <ScrollView style={styles.heartIcon}>
       {isFaved && (
         <Ionicons
           name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
@@ -38,12 +38,13 @@ const Session = ({
           color="red"
         />
       )}
-
-      <Text>{data.location}</Text>
-      <Text>{data.title}</Text>
-      <Text>{time}</Text>
-      <Text>{data.description}</Text>
-      {data.speaker && <Text>Presented by:</Text>}
+      <Text style={styles.speakerLocation}>{data.location}</Text>
+      <Text style={styles.speakerTitle}>{data.title}</Text>
+      <Text style={styles.speakerTime}>{time}</Text>
+      <Text style={styles.speakerDescription}>{data.description}</Text>
+      {data.speaker && (
+        <Text style={styles.speakerHostedBy}>Presented by:</Text>
+      )}
       {data.speaker && (
         <TouchableOpacity
           style={styles.speakerWrap}
@@ -51,12 +52,14 @@ const Session = ({
             navigation.push('Speaker', [data.speaker]);
           }}>
           <Image
-            style={{width: 50, height: 50}}
+            style={styles.speakerImageIcon}
             source={{uri: data.speaker.image}}
           />
-          <Text>{data.speaker.name}</Text>
+          <Text style={styles.speakerName}>{data.speaker.name}</Text>
         </TouchableOpacity>
       )}
+
+      <View style={styles.speakerGreyBar} />
 
       <TouchableOpacity
         style={styles.buttonWrap}
