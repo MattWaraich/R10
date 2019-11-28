@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {FavesContext} from '../../context/FavesContext/FavesContext';
-import {Text} from 'react-native';
+
+import Speaker from './Speaker';
 
 class SpeakerContainer extends Component {
   static navigationOptions = {
@@ -9,9 +10,8 @@ class SpeakerContainer extends Component {
 
   render() {
     const {navigation} = this.props;
-    const {params} = navigation.state;
-    console.log(params);
-    return <Text>abc</Text>;
+
+    return <Speaker data={navigation.state.params[0]} />;
   }
 }
 

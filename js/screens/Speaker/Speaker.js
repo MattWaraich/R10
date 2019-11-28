@@ -5,12 +5,13 @@ import {withNavigation} from 'react-navigation';
 import styles from './styles';
 import {ScrollView} from 'react-native-gesture-handler';
 import PropTypes from 'prop-types';
+import SafeAreaView from 'react-native-safe-area-view';
 
-const Speaker = ({navigation, speaker}) => {
+const Speaker = ({navigation, data}) => {
   let IconComponent = Ionicons;
   return (
-    <View style={styles.speakerScreenBackground}>
-      <View>
+    <SafeAreaView style={styles.speakerScreenBackground}>
+      <View style={styles.headerWrap}>
         <TouchableOpacity>
           <IconComponent
             name="ios-close"
@@ -20,21 +21,22 @@ const Speaker = ({navigation, speaker}) => {
           />
         </TouchableOpacity>
         <View style={styles.aboutSpeakersContainer}>
-          <Text style={styles.aboutSpeakersScreen}>About the Speaker</Text>
+          <Text style={styles.aboutSpeakerScreen}>About the Speaker</Text>
         </View>
       </View>
-      <ScrollView>
+      <ScrollView style={styles.ScrollView}>
         <View>
           {/* add correct image path!! */}
-          <Image />
-          <Text style={styles.speakersName}>{speaker.name}</Text>
-          <Text style={styles.speakersBio}>{speaker.bio}</Text>
-          <TouchableOpacity onPress={() => Linking.openURL(speaker.url)}>
+          <Image style={styles.speakerIcon} source={{uri: data.image}} />
+
+          <Text style={styles.speakersName}>{data.name}</Text>
+          <Text style={styles.speakersBio}>{data.bio}</Text>
+          <TouchableOpacity onPress={() => Linking.openURL(data.url)}>
             <Text style={styles.readMoreText}>Read More on Wikipedia</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
