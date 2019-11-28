@@ -38,6 +38,7 @@ const AboutStack = createStackNavigator(
 const FavesStack = createStackNavigator(
   {
     FavesScreen,
+    SessionScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({

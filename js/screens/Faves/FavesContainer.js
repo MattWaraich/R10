@@ -15,16 +15,22 @@ class FavesContainer extends Component {
     const {navigation} = this.props;
     return (
       <FavesContext.Consumer>
-        {({favIds}) => {
+        {({faveIds}) => {
           return (
             <Query query={QUERY_ALL_SESSIONS}>
               {({loading, error, data}) => {
                 if (loading) return <Loader />;
                 if (error) return <Text>Error : {error}</Text>;
                 if (data) {
-                  let filteredData = data.allSessions.filter(session => {});
-
-                  return <Text>You haven't faved any sessions yet</Text>;
+                  const filter = data.allSessions.filter(session =>
+                    faveIds.includes(session.id),
+                  );
+                  return (
+                    <Faves
+                      navigation={navigation}
+                      data={formatSessionData(filter)}
+                    />
+                  );
                 }
               }}
             </Query>

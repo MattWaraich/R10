@@ -7,7 +7,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import PropTypes from 'prop-types';
 import SafeAreaView from 'react-native-safe-area-view';
 import LinearGradient from 'react-native-linear-gradient';
-import {colors, typography} from '../../config/styles';
+import {colors} from '../../config/styles';
 
 const {purple, blue} = colors;
 

@@ -12,6 +12,10 @@ import {
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
+import LinearGradient from 'react-native-linear-gradient';
+import {colors} from '../../config/styles';
+
+const {purple, blue} = colors;
 
 const Session = ({
   data,
@@ -25,7 +29,7 @@ const Session = ({
   const isFaved = faveIds.includes(data.id);
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.wrap}>
       {isFaved && (
         <Ionicons
           name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
@@ -39,22 +43,35 @@ const Session = ({
       <Text>{data.title}</Text>
       <Text>{time}</Text>
       <Text>{data.description}</Text>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.push('Speaker', [data.speaker]);
-        }}>
-        <Image
-          style={{width: 50, height: 50}}
-          source={{uri: data.speaker.image}}
-        />
-        <Text>{data.speaker.name}</Text>
-      </TouchableOpacity>
+      {data.speaker && <Text>Presented by:</Text>}
+      {data.speaker && (
+        <TouchableOpacity
+          style={styles.speakerWrap}
+          onPress={() => {
+            navigation.push('Speaker', [data.speaker]);
+          }}>
+          <Image
+            style={{width: 50, height: 50}}
+            source={{uri: data.speaker.image}}
+          />
+          <Text>{data.speaker.name}</Text>
+        </TouchableOpacity>
+      )}
 
       <TouchableOpacity
+        style={styles.buttonWrap}
         onPress={() => {
           !isFaved ? addFaveSessionId(data.id) : removeFaveSessionId(data.id);
         }}>
-        <Text>{!isFaved ? 'Add to Faves' : 'Remove from Faves'}</Text>
+        <LinearGradient
+          style={styles.speakerFaveButton}
+          colors={[blue, purple]}
+          start={{x: 0.0, y: 1.0}}
+          end={{x: 1.0, y: 0.0}}
+        />
+        <Text style={styles.buttonText}>
+          {!isFaved ? 'Add to Faves' : 'Remove from Faves'}
+        </Text>
       </TouchableOpacity>
     </ScrollView>
   );
