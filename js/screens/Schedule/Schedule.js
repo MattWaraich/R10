@@ -27,5 +27,5 @@ const Schedule = ({navigation, data}) => {
 export default Schedule;
 
 Schedule.propTypes = {
-  title: PropTypes.string,
+  data: PropTypes.object,
 };

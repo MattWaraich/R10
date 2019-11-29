@@ -30,5 +30,5 @@ const Faves = ({navigation, data}) => {
 export default Faves;
 
 Faves.propTypes = {
-  title: PropTypes.string,
+  data: PropTypes.object,
 };
