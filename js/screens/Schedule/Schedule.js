@@ -4,6 +4,7 @@ import Loader from '../../components/Loader';
 import SessionComp from '../../components/SessionComp';
 import moment from 'moment';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 const Schedule = ({navigation, data}) => {
   return data ? (
@@ -24,3 +25,9 @@ const Schedule = ({navigation, data}) => {
 };
 
 export default Schedule;
+
+Schedule.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string,
+  }),
+};

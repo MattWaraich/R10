@@ -3,6 +3,7 @@ import {SectionList, Text} from 'react-native';
 import moment from 'moment';
 import SessionComp from '../../components/SessionComp';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 const Faves = ({navigation, data}) => {
   console.log(data);
@@ -27,3 +28,9 @@ const Faves = ({navigation, data}) => {
 };
 
 export default Faves;
+
+Faves.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string,
+  }),
+};
