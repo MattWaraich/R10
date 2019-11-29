@@ -15,9 +15,9 @@
 
 ## Installation
 
-> (iOS) Install Xcode before start &nbsp;
+- (iOS) Install Xcode before start
 
-> (Android) Install Android Studio
+- (Android) Install Android Studio
 
 ### For iOs
 
