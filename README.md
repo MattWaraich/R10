@@ -48,14 +48,6 @@ yarn run:ios
 yarn run:android
 ```
 
-## Some User Interface Screens of R10
-
-![Schedule Page](_snapshots/schedule.png)
-
-![About the Speaker Page](_snapshots/about-speaker.png)
-
-![Conducts Page](_snapshots/conducts.png)
-
 ## Personal Learnings
 
 - Using React Native and its specific styling components
