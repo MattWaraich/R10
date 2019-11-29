@@ -6,8 +6,6 @@ import styles from './styles';
 import PropTypes from 'prop-types';
 
 const Faves = ({navigation, data}) => {
-  console.log(data);
-
   if (data) {
     return (
       <SectionList
@@ -30,5 +28,5 @@ const Faves = ({navigation, data}) => {
 export default Faves;
 
 Faves.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 };

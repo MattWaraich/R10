@@ -24,7 +24,6 @@ const Session = ({
   navigation,
 }) => {
   const time = moment(data.startTime).format('hh:mm A');
-  console.log(data);
   const isFaved = faveIds.includes(data.id);
 
   return (
