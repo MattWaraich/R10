@@ -13,7 +13,11 @@
 
 ## Dependencies Installation
 
-- 'yarn install' or 'npm install'
+## Installation
+
+> (iOS) Install Xcode before start &nbsp;
+
+> (Android) Install Android Studio
 
 ### For iOs
 
@@ -24,6 +28,25 @@
 
 - Requires Android Studio
 - 'react-native run-android'
+
+1. Install dependencies
+
+
+    `yarn install` or  `npm install`
+
+2. Start emulator
+
+### iOS
+
+```
+yarn run:ios
+```
+
+### Android
+
+```
+yarn run:android
+```
 
 ## Some User Interface Screens of R10
 
