@@ -2,10 +2,12 @@ import {StyleSheet} from 'react-native';
 import {colors, typography} from '../../config/styles';
 
 const styles = StyleSheet.create({
-  wrap: {padding: 16},
+  scheduleContainer: {paddingHorizontal: 12},
   speakerWrap: {
     flexDirection: 'row',
+    paddingHorizontal: 20,
   },
+
   buttonWrap: {
     width: 180,
     height: 48,
@@ -14,10 +16,21 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 20,
   },
+
   heartIcon: {
-    alignSelf: 'flex-end',
+    flexDirection: 'row',
+    width: '100%',
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    justifyContent: 'space-between',
   },
+  speakerLocation: {
+    color: '#999999',
+    fontWeight: '700',
+  },
+
   speakerFaveButton: {
     position: 'absolute',
     width: '100%',
@@ -28,36 +41,38 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.white,
   },
-  speakerLocation: {
-    color: '#999999',
-    fontWeight: '700',
-  },
+
   speakerTitle: {
     fontWeight: '600',
-    paddingTop: 20,
+    paddingTop: 5,
     fontSize: 23,
     paddingBottom: 15,
+    paddingLeft: 10,
   },
   speakerTime: {
     color: '#cf392a',
     fontWeight: '500',
     paddingBottom: 15,
+    paddingLeft: 10,
   },
   speakerDescription: {
     fontFamily: 'Montserrat-Light',
     fontSize: 18,
     paddingBottom: 15,
+    paddingLeft: 10,
   },
   speakerHostedBy: {
     color: '#999999',
     fontSize: 15,
     fontWeight: '600',
     paddingBottom: 10,
+    paddingLeft: 10,
   },
   speakerImageIcon: {
     width: 50,
     height: 50,
     borderRadius: 50,
+    paddingRight: 20,
   },
   speakerName: {
     paddingLeft: 15,

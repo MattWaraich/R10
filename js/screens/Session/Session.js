@@ -7,7 +7,6 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  Button,
 } from 'react-native';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -29,16 +28,19 @@ const Session = ({
   const isFaved = faveIds.includes(data.id);
 
   return (
-    <ScrollView style={styles.heartIcon}>
-      {isFaved && (
-        <Ionicons
-          name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
-          style={styles.iconHeart}
-          size={24}
-          color="red"
-        />
-      )}
-      <Text style={styles.speakerLocation}>{data.location}</Text>
+    <ScrollView style={styles.scheduleContainer}>
+      <View style={styles.heartIcon}>
+        <Text style={styles.speakerLocation}>{data.location}</Text>
+
+        {isFaved && (
+          <Ionicons
+            name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+            style={styles.iconHeart}
+            size={24}
+            color="red"
+          />
+        )}
+      </View>
       <Text style={styles.speakerTitle}>{data.title}</Text>
       <Text style={styles.speakerTime}>{time}</Text>
       <Text style={styles.speakerDescription}>{data.description}</Text>

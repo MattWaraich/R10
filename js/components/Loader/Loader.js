@@ -1,8 +1,9 @@
 import React from 'react';
 import {ActivityIndicator} from 'react-native';
+import styles from './styles';
 
 const Loader = () => {
-  return <ActivityIndicator size="large" />;
+  return <ActivityIndicator style={styles.loader} size="large" />;
 };
 
 export default Loader;

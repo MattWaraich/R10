@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   goBack: {
-    alignSelf: 'flex-start',
     color: '#f1f1f1',
   },
   aboutSpeakerScreen: {

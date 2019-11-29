@@ -69,33 +69,42 @@ class Conducts extends React.Component {
             LayoutAnimation.configureNext(
               LayoutAnimation.Presets.easeInEaseOut,
             );
-            this.setState({expanded: !this.state.expanded});
+            this.setState({collapse: !this.state.collapse});
           }}>
           <View style={{flexDirection: 'row'}}>
             <Animated.Text
               style={{
+                color: '#9963ea',
+                fontSize: 20,
+                fontFamily: 'Montserrat',
                 transform: [{rotate: spin}],
               }}>
               {icon}
             </Animated.Text>
             <Text
               style={{
+                paddingLeft: 16,
                 color: '#9963ea',
-                fontSize: 20,
+                fontSize: 16,
                 fontFamily: 'Montserrat',
               }}>
               {this.props.title}
             </Text>
           </View>
         </TouchableOpacity>
-        {this.state.expanded && <Text>{this.props.description}</Text>}
+        {!this.state.collapse && (
+          <Text style={styles.conductDescription}>
+            {this.props.description}
+          </Text>
+        )}
       </View>
     );
   }
 }
 
 Conducts.propTypes = {
-  conducts: PropTypes.object.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
 };
 
 export default Conducts;

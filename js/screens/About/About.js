@@ -33,15 +33,16 @@ const About = ({data}) => {
       </View>
 
       <View>
-        {data.allConducts.map(element => (
-          <View style={styles.allConducts} key={element.id}>
-            <Conducts
-              style={styles.conductsDescription}
-              title={element.title}
-              description={element.description}
-            />
-          </View>
-        ))}
+        {data &&
+          data.allConducts.map(element => (
+            <View style={styles.allConducts} key={element.id}>
+              <Conducts
+                style={styles.conductsDescription}
+                title={element.title}
+                description={element.description}
+              />
+            </View>
+          ))}
       </View>
 
       <View style={styles.aboutGreyBar} />
