@@ -6,6 +6,7 @@ const SessionComp = ({session, navigation}) => {
   return (
     <TouchableOpacity
       onPress={() => {
+        console.log('PRESSED');
         navigation.push('Session', [session]);
       }}>
       <View style={styles.sessionContainer}>

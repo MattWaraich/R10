@@ -6,7 +6,6 @@ import FavesScreen from '../screens/Faves';
 import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';
 import SessionScreen from '../screens/Session';
-import SpeakerScreen from '../screens/Speaker';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {colors, typography} from '../config/styles';
@@ -24,7 +23,9 @@ const AboutStack = createStackNavigator(
       title: 'About',
       headerLeft: () => (
         <Ionicons
-          onPress={console.log(1)}
+          onPress={() => {
+            navigation.toggleDrawer();
+          }}
           name="md-menu"
           color="#fff"
           size={36}
@@ -45,33 +46,66 @@ const FavesStack = createStackNavigator(
       ...sharedNavigationOptions(navigation),
       initialRouteName: 'Faves',
       title: 'Faves',
+      headerLeft: () => (
+        <Ionicons
+          onPress={() => {
+            navigation.toggleDrawer();
+          }}
+          name="md-menu"
+          color="#fff"
+          size={36}
+          style={{marginLeft: 16}}
+        />
+      ),
     }),
   },
 );
 
 const MapStack = createStackNavigator(
   {
-    MapScreen,
+    Map: MapScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
       initialRouteName: 'Map',
       title: 'Map',
+      headerLeft: () => (
+        <Ionicons
+          onPress={() => {
+            navigation.toggleDrawer();
+          }}
+          name="md-menu"
+          color="#fff"
+          size={36}
+          style={{marginLeft: 16}}
+        />
+      ),
     }),
   },
 );
 
 const ScheduleStack = createStackNavigator(
   {
-    ScheduleScreen,
-    SessionScreen,
+    Schedule: ScheduleScreen,
+    Session: SessionScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
       ...sharedNavigationOptions(navigation),
-      initialRouteName: 'Session', //is this correct?
+      initialRouteName: 'Schedule',
       title: 'Schedule',
+      headerLeft: () => (
+        <Ionicons
+          onPress={() => {
+            navigation.toggleDrawer();
+          }}
+          name="md-menu"
+          color="#fff"
+          size={36}
+          style={{marginLeft: 16}}
+        />
+      ),
     }),
   },
 );

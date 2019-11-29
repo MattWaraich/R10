@@ -1,6 +1,6 @@
 // import AboutContainer from './AboutContainer';
 import React from 'react';
-import {ScrollView, Text, View, Image, FlatList} from 'react-native';
+import {ScrollView, Text, View, Image} from 'react-native';
 import styles from './styles';
 import Conducts from '../../components/Conducts';
 

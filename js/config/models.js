@@ -8,7 +8,6 @@ export const addFav = async favId => {
     });
     return await AsyncStorage.setItem(`${favId}`, strValue);
   } catch (e) {
-    console.log(e);
     return false;
   }
 };
@@ -19,7 +18,6 @@ export const getAllFaves = async () => {
     const values = await AsyncStorage.multiGet(keys);
     return values.filter(value => value[1].includes('faved_on'));
   } catch (e) {
-    console.log(e);
     return false;
   }
 };
@@ -29,7 +27,6 @@ export const removeFav = async favId => {
     const fav = await AsyncStorage.removeItem(`${favId}`);
     return fav;
   } catch (e) {
-    console.log(e);
     return false;
   }
 };
